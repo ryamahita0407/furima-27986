@@ -16,21 +16,19 @@
 ### Association
   has_many :orders
   has_many :items
-  has_many :orders
-  has_one: address
 
 ## addressesテーブル
-| Colum         | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| postcode      | string     | null: false                    |
-| prefecture_id | integer    | null: false ,foreign_key: true |
-| city          | string     | null: false                    |
-| block         | string     | null: false                    |
-| building      | string     |                                |
-| phone_num     | string     | null: false                    |
+| Colum         | Type       | Options      |
+| ------------- | ---------- | ------------ |
+| postcode      | string     | null: false  |
+| prefecture_id | integer    | null: false  |
+| city          | string     | null: false  |
+| block         | string     | null: false  |
+| building      | string     |              |
+| phone_num     | string     | null: false  |
 
 ### Association
-  belongs_to :user
+  belongs_to :address
   belongs_to_active_hash :prefecture
 
 ## itemsテーブル
@@ -39,11 +37,11 @@
 | --------------- | ------------- | ----------------------------- |
 | item_name       | string        | null: false                   |
 | item_text       | text          | null: false                   |
-| category_id     | integer       | null: false,foreign_key: true |
-| condition_id    | integer       | null: false,foreign_key: true |
-| postage_id      | integer       | null: false,foreign_key: true |
-| area_id         | integer       | null: false,foreign_key: true |
-| shipping_day_id | integer       | null: false,foreign_key: true | 
+| category_id     | integer       | null: false                   |
+| condition_id    | integer       | null: false                   |
+| postage_id      | integer       | null: false                   |
+| area_id         | integer       | null: false                   |
+| shipping_day_id | integer       | null: false                   | 
 | price           | integer       | null: false                   |
 | user            | references    | null: false,foreign_key: true |
 
@@ -63,6 +61,7 @@
 | item  | references | null,foreign_key: true |
 
 ### Association
+  has_one :address
   belongs_to :user
   belongs_to :item
 
