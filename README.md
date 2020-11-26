@@ -42,18 +42,17 @@
 
 ## itemsテーブル
 
-| Colum        | Type          | Options                        |
-| ------------ | ------------- | ------------------------------ |
-| item_name    | string        | null: false                    |
-| item_text    | text          | null: false                    |
-| category_id     | integer    | null: false |
-| condition_id    | integer    | null: false  |
-| postage_id     | integer    | null: false |
-| area_id        | integer    | null: false |
-| shipping_day_id | integer    | null: false|
-| price        | integer       | null: false                    |
-| seller       | references    | null: false, foreign_key: true |
-| buyer        | references    | foreign_key: true              |
+| Colum           | Type          | Options                        |
+| --------------- | ------------- | ------------------------------ |
+| item_name       | string        | null: false                    |
+| item_text       | text          | null: false                    |
+| category_id     | integer       | null: false                    |
+| condition_id    | integer       | null: false                    |
+| postage_id      | integer       | null: false                    |
+| area_id         | integer       | null: false                    |
+| shipping_day_id | integer       | null: false                    | 
+| price           | integer       | null: false                    |
+
 
 ### Association
 belongs_to_active_hash :category
