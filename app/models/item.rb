@@ -6,10 +6,12 @@ class Item < ApplicationRecord
       validates :category_id, :condition_id, :postage_id, :prefecture_id, :shipping_day_id
     end 
 
+    belongs_to :user
     belongs_to :category
     belongs_to :condition
     belongs_to :postage
     belongs_to :prefecture
     belongs_to :shipping_day
+    has_one_attached :image
   end
 end
