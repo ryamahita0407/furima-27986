@@ -59,7 +59,6 @@ describe Item do
       it "priceが¥299以下のとき登録できない" do
         @item.price = 299
         @item.valid?
-        binding.pry
         expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
       it "priceが¥10,000,000以上のとき登録できない" do
