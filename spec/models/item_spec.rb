@@ -26,25 +26,50 @@ describe Item do
         @item.valid?
         expect(@item.errors.full_messages).to include("Item text can't be blank")
       end
+      it "category_idが空のとき登録できない" do
+        @item.category_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
       it "category_idが--のとき登録できない" do
         @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 1")
+      end
+      it "condition_idが空のとき登録できない" do
+        @item.condition_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
       it "condition_idが--のとき登録できない" do
         @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
+      it "postage_idが空のときの登録できない" do
+        @item.postage_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Postage can't be blank")
+      end
       it "postage_idが--のとき登録できない" do
         @item.postage_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Postage must be other than 1")
       end
+      it "prefecture_idが空のとき登録できない" do
+        @item.prefecture_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      end
       it "prefecture_idが--のとき登録できない" do
         @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture must be other than 1")
+      end
+      it "shipping_day_idが空のとき登録できない" do
+        @item.shipping_day_id = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping day can't be blank")
       end
       it "shipping_day_idが--のとき登録できない" do
         @item.shipping_day_id = 1
