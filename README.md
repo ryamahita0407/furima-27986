@@ -26,7 +26,7 @@
 | block         | string     | null: false                   |
 | building      | string     |                               |
 | phone_num     | string     | null: false                   |
-| item       | references | null: false, foreign_key: true|
+| order_id      | references | foreign_key: true             |
 
 ### Association
   belongs_to :order
