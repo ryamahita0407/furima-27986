@@ -25,6 +25,6 @@ class User < ApplicationRecord
                 message: "は半角英数字混合で入力してください"
               }
   end
-
+  has_many :orders
   has_many :items
 end
