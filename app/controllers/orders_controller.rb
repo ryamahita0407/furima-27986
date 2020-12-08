@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :move_to_index
+
   def index
     @item = Item.find(params[:item_id])
+    if @item.user_id == current_user.id
+      redirect_to root_path
+    else
     @order_address = OrderAddress.new
+    end
   end
 
   def create
@@ -29,5 +35,12 @@ class OrdersController < ApplicationController
       card: order_address_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def move_to_index
+    @item = Item.find(params[:item_id])
+    unless user_signed_in?
+        redirect_to root_path
+    end
   end
 end
