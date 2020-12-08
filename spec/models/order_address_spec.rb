@@ -40,7 +40,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'prefecture_idが--だと保存できないこと' do
         @order_address.prefecture_id = 1
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Prefecture must be other than 1")
+        expect(@order_address.errors.full_messages).to include("Prefecture は県名を選択してください")
       end
       it 'cityが空だと保存できないこと' do
         @order_address.city = nil
