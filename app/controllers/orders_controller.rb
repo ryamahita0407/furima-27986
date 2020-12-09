@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
-    if @item.user_id == current_user.id
+    if @item.order.present?
       redirect_to root_path
     else
     @order_address = OrderAddress.new
@@ -38,9 +38,8 @@ class OrdersController < ApplicationController
   end
 
   def move_to_index
-    @item = Item.find(params[:item_id])
     unless user_signed_in?
-        redirect_to root_path
+        redirect_to new_user_session_path
     end
   end
 end
