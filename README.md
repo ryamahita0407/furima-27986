@@ -26,10 +26,10 @@
 | block         | string     | null: false                   |
 | building      | string     |                               |
 | phone_num     | string     | null: false                   |
-| item_id       | references | null: false, foreign_key: true|
+| order_id      | references | foreign_key: true             |
 
 ### Association
-  belongs_to :address
+  belongs_to :order
   belongs_to_active_hash :prefecture
 
 ## itemsテーブル
